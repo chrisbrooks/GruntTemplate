@@ -42,16 +42,16 @@ module.exports = function(grunt) {
 				options: {
 				},
 				files: {
-					'app/build/styles/style.css': 'app/src/assets/styles/style.scss',
+					'app/build/styles/app.css': 'app/src/assets/styles/app.scss',
 				}
 			},
 
 			release: {
 				options: {
-					outputStyle: 'compressed'
+					style: 'compressed'
 				},
 				files: {
-					'app/build/styles/style.css': 'app/src/assets/styles/style.scss',
+					'app/build/styles/app.css': 'app/src/assets/styles/app.scss',
 				}
 			}
 		},

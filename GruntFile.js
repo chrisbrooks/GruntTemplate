@@ -10,7 +10,7 @@ module.exports = function(grunt) {
 
 		jshint: {
 
-			files: 'app/src/assets/scripts/*.js',
+			files: 'app/src/assets/scripts/custom/*.js',
 
 			options: {
 				globals: {
@@ -169,40 +169,50 @@ module.exports = function(grunt) {
 					sanitize: false
 				},
 				production: true,
-				layoutdir: 'src/layouts',
-				partials: ['src/partials/**/*.hbs']
+				layoutdir: 'app/src/layouts',
+				partials: ['app/src/partials/**/*.hbs']
 			},
 
 			development: {
 				options: {
-					data: 'config/development/*.json'
+					data: 'app/config/development/*.json'
 				},
 				files: [
 					{
 						expand: true,
-						cwd: 'src/pages',
+						cwd: 'app/src/pages',
 						src: ['**/*.hbs'],
-						dest: 'build/'
+						dest: 'app/build/'
 					}
 				]
 			},
 
 			release: {
 				options: {
-					data: 'config/release/*.json'
+					data: 'app/config/release/*.json'
 				},
 				files: [
 					{
 						expand: true,
-						cwd: 'src/pages',
+						cwd: 'app/src/pages',
 						src: ['**/*.hbs'],
-						dest: 'build/'
+						dest: 'app/build/'
 					}
 				]
 			},
 		},
 
 		watch: {
+
+			// Watch for markup changes
+			markup: {
+				files: '**/*.hbs',
+				tasks: ['assemble:development'],
+				options: {
+					livereload: false,
+					interrupt: true
+				}
+			},
 
 			// Run SASS compliler when precompiled files are changed
 			styles: {
@@ -276,11 +286,12 @@ module.exports = function(grunt) {
 		'autoprefixer',
 		'copy',
 		'uglify:development',
+		'assemble:development',
 		'connect',
 		'watch'
 	]);
 
-		// Register task(s) to run when 'grunt release' command is executed
+	// Register task(s) to run when 'grunt release' command is executed
 	grunt.registerTask('release', [
 		'clean',
 		'sass:release',
@@ -288,6 +299,7 @@ module.exports = function(grunt) {
 		'copy',
 		'uglify:release',
 		'assemble:release'
+
 	]);
 
 };

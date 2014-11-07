@@ -1,0 +1,61 @@
+{
+	"demo": [
+		{
+			"title": "This is the title",
+			"date": "04/12/2011",
+			"category": "Catagory A",
+			"body": "This is some body text for catagory A",
+			"facets": {
+				"date": "2011-12-04",
+				"topics": [
+					"A topic"
+				],
+				"keywords": [
+					"demo asset",
+					"demo asset two"
+				],
+				"years": [
+					"2011"
+				]
+			}
+		},
+		{
+			"title": "This is the title",
+			"date": "04/12/2011",
+			"category": "Catagory B",
+			"body": "This is some body text for catagory B",
+			"facets": {
+				"date": "2011-12-04",
+				"topics": [
+					"B topic"
+				],
+				"keywords": [
+					"demo asset",
+					"demo asset two"
+				],
+				"years": [
+					"2011"
+				]
+			}
+		},
+		{
+			"title": "This is the title",
+			"date": "04/12/2011",
+			"category": "Catagory B",
+			"body": "This is some body text for catagory B",
+			"facets": {
+				"date": "2011-12-04",
+				"topics": [
+					"B topic"
+				],
+				"keywords": [
+					"demo asset",
+					"demo asset two"
+				],
+				"years": [
+					"2011"
+				]
+			}
+		}
+	]
+}

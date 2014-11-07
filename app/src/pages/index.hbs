@@ -2,3 +2,19 @@
 layout: default.hbs
 class: home
 ---
+
+<h1>This is an example of a page which is using the handlebars assemble</h1>
+
+<h2>{{>partial}}</h2>
+
+{{#each jsondemo.demo}}
+<div class="item large-6 small-12 columns" data-date="{{this.facets.date}}" data-topics='[{{#each this.facets.topics}}"{{this}}",{{/each}}""]' data-keywords='[{{#each this.facets.keywords}}"{{this}}",{{/each}}""]' data-years='[{{#each this.facets.years}}"{{this}}",{{/each}}""]'>
+	<div class="inner">
+		<span class="category"><a href="#" title="" data-target-topic="{{this.facets.topics.[0]}}">{{this.category}}</a></span>
+		<p class="date">{{this.date}}</p>
+		<h3>{{this.title}}</h3>
+		<p>{{this.body}}</p>
+		<p class="more"><a href="#" title="" class="more">Read more</a></p>
+	</div>
+</div>
+{{/each}}

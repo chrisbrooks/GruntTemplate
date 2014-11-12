@@ -128,7 +128,7 @@ module.exports = function(grunt) {
 			server: {
 				options: {
 					base: 'app/build/',
-					hostname: '127.0.0.1',
+					hostname: '*',
 					keepalive: false,
 					livereload: true,
 					open: {
